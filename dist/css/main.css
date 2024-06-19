@@ -1,4 +1,12 @@
 body {
-  background-color: blue;
+  background-color: green;
   font-weight: 700;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+}
+.main p {
+  font-size: 30px;
 }/*# sourceMappingURL=main.css.map */
