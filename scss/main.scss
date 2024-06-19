@@ -1,4 +1,4 @@
-$primary-color: blue;
+$primary-color: green;
 $secondary-color:red;
 $font-weights: (
     "regular": 400,
@@ -9,4 +9,19 @@ $font-weights: (
 body{
     background-color: $primary-color;
     font-weight: map-get($font-weights, bold); 
+
+    // here if you want to change properties of the paragrapth 
+}
+.main {
+    width: 80%;
+    margin: 10px auto;
+
+    // if main containg any class so we can use it like for ex we have class main-para
+    // main-para{
+
+    // }
+    // we can use & instead of .main / & mean to the parent class 
+    &-para{
+
+    }
 }
