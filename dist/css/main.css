@@ -5,6 +5,10 @@ body {
 
 .main {
   width: 80%;
+  margin: 10px auto;
+}
+.main {
+  width: 80%;
   margin: 0 auto;
 }
 .main p {
