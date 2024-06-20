@@ -1,82 +1,92 @@
-@import './resets';
-@import './variables'; 
+@import "./resets";
+@import "./variables";
 
 // we can also add funcitons in the scss
 @function weight($weight-name) {
-    @return map-get($font-weights , $weight-name )
-};
+  @return map-get($font-weights, $weight-name);
+}
 
 //  adding mixin help us to dont repeat our code
 // we can also add arguments
 // mixin 1
-@mixin flexCenter($direction){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $direction;
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
 }
 
 // another mixin 2
-@mixin theme($light-theme: true){
-@if $light-theme {
-    // here lighten && darken is for opposing color and percentage are for opacity 
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+    // here lighten && darken is for opposing color and percentage are for opacity
     background: lighten($primary-color, 100%);
     color: darken($text-color, 100%);
-}
+  }
 }
 
 // mixin 3
 @mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
+  @media (max-width: $mobile) {
+    // here content mean to anthing passed in the mobile mixin
+    @content;
+  }
+}
+
+body {
+  background-color: $primary-color;
+  //here we can functions to pass values weight function is declared at the top
+  font-weight: weight(bold);
+
+  color: $text-color;
+  // here if you want to change properties of the paragrapth
+}
+.main {
+  width: 80%;
+  margin: 10px auto;
+  // adding mixins here
+  @include flexCenter(row);
+
+  // if main containg any class so we can use it like for ex we have class main-para
+  // main-para{
+
+  // }
+  // we can use & instead of .main / & mean to the parent class
+  // for adding every thing else use
+  // #{&}
+
+  #{&}-para1 {
+    &:hover {
+      color: pink;
     }
-}
+  }
 
-body{
-    background-color: $primary-color;
-    //here we can functions to pass values weight function is declared at the top 
-    font-weight: weight(bold); 
-
-    color: $text-color;
-    // here if you want to change properties of the paragrapth 
-}
-.main {
-    width: 80%;
-    margin: 10px auto;  
-   // adding mixins here
-@include flexCenter(row);
-
-
-    // if main containg any class so we can use it like for ex we have class main-para
-    // main-para{
-
-    // }
-    // we can use & instead of .main / & mean to the parent class 
-    // for adding every thing else use 
-    // #{&}
-
-    // #{&}-para{
-
-    // }
+  // here if you want to extants the values and dont want to rewrite the values of para1 and want to same as para1 to para2
+  #{&}-para2 {
+    // here how to extent
+    @extend .main-para1; // all of the properties are extended now both have same property
+    &:hover{
+        color: blue;
+    }
+  }
 }
 
 .main {
-   width: 80%;
-   margin: 0 auto;
-   p{
+  width: 80%;
+  margin: 0 auto;
+  p {
     font-size: 30px;
-   }
-   &:hover{
-    color: pink;
-   }
+  }
 
-   @include mobile{
+  @include mobile {
     flex-direction: column;
     color: aqua;
-   }
+  }
 }
 
 // to use second mixin 2
-.light{
-    @include theme($light-theme: true);
+.light {
+  @include theme($light-theme: true);
 }
+
+// in the sass we dont need calc(80% -40%) we just use 80% - 40%

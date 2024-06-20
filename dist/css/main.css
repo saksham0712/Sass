@@ -18,6 +18,12 @@ body {
   align-items: center;
   flex-direction: row;
 }
+.main .main-para1:hover, .main .main-para2:hover {
+  color: pink;
+}
+.main .main-para2:hover {
+  color: blue;
+}
 
 .main {
   width: 80%;
@@ -25,9 +31,6 @@ body {
 }
 .main p {
   font-size: 30px;
-}
-.main:hover {
-  color: pink;
 }
 @media (max-width: 786px) {
   .main {
