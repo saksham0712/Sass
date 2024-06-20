@@ -90,3 +90,20 @@ body {
 }
 
 // in the sass we dont need calc(80% -40%) we just use 80% - 40%
+
+
+
+// to add background with image and gradient at same time we can use 
+// background: linear-gradient( 
+//     to right, 
+//     rgba($anyColor, 0.9),
+//     rgba($anyColor, 0.3)
+//     ),
+//     url('../img') center top;
+
+
+
+// tansition using mixins 
+// @mixin transition-ease{
+//     transition: all 0.5s ease-in-out;
+// }
