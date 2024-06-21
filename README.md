@@ -35,7 +35,7 @@ To get started with the projects in this repository, you will need to have SASS 
 2. Clone this repository:
 
     ```sh
-    git clone https://github.com/your-username/sass-practice.git
+    git clone https://github.com/saksham0712/Sass/tree/master
     ```
 
 3. Navigate to the project directory:
@@ -78,7 +78,7 @@ This repository is licensed under the MIT License. See the LICENSE file for more
 Contact
 If you have any questions or feedback, feel free to reach out to me:
 
-Email: your-email@example.com
+Email: sakshamverma626@gmail.com
 GitHub: your-username
 Happy coding!
 
