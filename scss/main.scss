@@ -25,7 +25,7 @@
   }
 }
 
-// mixin 3
+// this is mixin 3 
 @mixin mobile {
   @media (max-width: $mobile) {
     // here content mean to anthing passed in the mobile mixin
